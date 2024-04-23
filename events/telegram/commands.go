@@ -12,9 +12,9 @@ import (
 )
 
 const (
-	RndCmd   = "/rnd"
-	HelpCmd  = "/help"
-	StartCmd = "/start"
+	RecipeCmd = "/recipe"
+	HelpCmd   = "/help"
+	StartCmd  = "/start"
 )
 
 func (p *Processor) doCmd(ctx context.Context, text string, chatID int, username string) error {
@@ -27,8 +27,8 @@ func (p *Processor) doCmd(ctx context.Context, text string, chatID int, username
 	}
 
 	switch text {
-	case RndCmd:
-		return p.sendRandom(ctx, chatID, username)
+	case RecipeCmd:
+		return p.sendRecipe(ctx, chatID, username)
 	case HelpCmd:
 		return p.sendHelp(ctx, chatID)
 	case StartCmd:
@@ -65,7 +65,7 @@ func (p *Processor) savePage(ctx context.Context, chatID int, pageURL string, us
 	return nil
 }
 
-func (p *Processor) sendRandom(ctx context.Context, chatID int, username string) (err error) {
+func (p *Processor) sendRecipe(ctx context.Context, chatID int, username string) (err error) {
 	defer func() { err = e.WrapIfErr("can't do command: can't send random", err) }()
 
 	page, err := p.storage.PickRandom(ctx, username)

@@ -12,14 +12,12 @@ import (
 )
 
 const (
-	tgBotHost   = "api.telegram.org"
-	storagePath = "files_storage"
-	batchSize   = 100
+	tgBotHost = "api.telegram.org"
+	batchSize = 100
 )
 
 func main() {
 	cfg := config.MustLoad()
-	//storage := files.New(storagePath)
 
 	storage := mongo.New(cfg.MongoConnectionString, 10*time.Second)
 

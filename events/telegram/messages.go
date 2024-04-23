@@ -1,13 +1,13 @@
 package telegram
 
-const msgHelp = `I can save and keep you pages. Also I can offer you them to read.
+const msgHelp = `Я помогу сохранить вашего повора и желаемый рецепт в виде ссылки.
 
-In order to save the page, just send me al link to it.
+Чтоб сохранить ссылку на поворов или рецепт, просто вышли их мне.
 
-In order to get a random page from your list, send me command /rnd.
-Caution! After that, this page will be removed from your list!`
+Чтобы получить рецепт дня, вызовите команду /recipe.
+Внимание! После этого, рецепт будет удален!`
 
-const msgHello = "Hi there! 👾\n\n" + msgHelp
+const msgHello = "Привет! \n\n" + msgHelp
 
 const (
 	msgUnknownCommand = "Неизвестная команда 🤔"
